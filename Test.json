@@ -1,0 +1,87 @@
+{
+  "uuid": "22b610a0-5ed3-43d1-b0c8-1b17d26719a2",
+  "lastMigration": 28,
+  "name": "Test",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 5555,
+  "hostname": "localhost",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "b655b982-0fe0-4483-83ee-68acff391b5b",
+      "type": "crud",
+      "documentation": "",
+      "method": "",
+      "endpoint": "users",
+      "responses": [
+        {
+          "uuid": "a1e04c78-bdaf-4a6f-a23e-56dc5c5ad8e0",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "DATABUCKET",
+          "filePath": "",
+          "databucketID": "klrd",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "b655b982-0fe0-4483-83ee-68acff391b5b"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [
+    {
+      "uuid": "6820df8a-3956-43f3-a164-9ba0cfb4a6e2",
+      "id": "klrd",
+      "name": "Users",
+      "documentation": "",
+      "value": "[\r\n  {{#repeat 100}}\r\n    {\r\n      \"id\": {{add @index 1}},\r\n      \"name\": \"{{faker 'name.firstName'}} {{faker 'name.lastName'}}\",\r\n      \"email\": \"{{faker 'internet.email'}}\"\r\n    }\r\n    {{#unless @last}},{{/unless}}\r\n  {{/repeat}}\r\n]"
+    }
+  ]
+}
