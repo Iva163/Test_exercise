@@ -4,7 +4,7 @@
   "name": "Test",
   "endpointPrefix": "",
   "latency": 0,
-  "port": 3000,
+  "port": 5555,
   "hostname": "localhost",
   "folders": [],
   "routes": [
